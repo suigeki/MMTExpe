@@ -41,7 +41,7 @@ Router::connect('/ws/test/delete/:id', array('plugin'=>null,'controller'=>'tests
 
 //*****************************************************************
 //Expe
-
+Router::connect('/expe/empan/1', array('plugin' => null, 'controller' => 'empans', 'action' => 'phase1'));
 
 /**
  * Load all plugin routes. See the CakePlugin documentation on

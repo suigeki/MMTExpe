@@ -5,12 +5,12 @@
 		var $name='Empans';
 		
 		var $paginate = array(
-							'Empans' => array(
-												)
-							);
+                                        'Empans' => array(
+                                                                                )
+                                    );
 							
 		
-		public $components = array('RequestHandler');
+		public $components = array('RequestHandler', 'MainFtn');
 		
 		//On oblige Ã  une authenfication
 		function beforeFilter(){
@@ -19,13 +19,11 @@
 		}
 
 
-		public function test_index(){
+		public function phase1(){
 			
-			$tests = array('id'=>'1','testname'=>'Nom du test');
-			$this->set('tests', array('tests'=>$tests));
-			$this->set('_serialize', array('tests'));
+                    $this->set('random_string', $this->MainFtn->rdm_majstring(4));
 
-                    $this->layout = false;
+                    $this->layout = 'Expe/main_layout';
                     $this->viewPath = 'Expe';
                     $this->render('empan_phase1');
 		}
