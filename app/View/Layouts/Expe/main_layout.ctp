@@ -18,7 +18,7 @@
             <hr />
             
             <div class="row">
-                <div id="menu" class="col-md-3">
+                <div id="menu" class="col-md-12">
                     <?php echo $this->Session->flash(); ?>
                     <?php echo $content_for_layout ?>
                 </div>
@@ -30,14 +30,15 @@
                 <p>The sky's the limit © </p>
             </footer>
         </div>
-        <?php echo $scripts_for_layout ?>
+        
                 
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
         <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script> 
+        <?php echo $scripts_for_layout ?>
         <script>
-            $(document).ready(function() {
+            /*$(document).ready(function() {
                 
-            }
+            });*/
         </script>
     </body>
 </html>

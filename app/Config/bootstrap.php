@@ -132,3 +132,8 @@ CakeLog::config('error', array(
 	'types' => array('warning', 'error', 'critical', 'alert', 'emergency'),
 	'file' => 'error',
 ));*/
+
+Configure::write('Website.url.application', 'http://localhost:8787/cakephp2/tests03.2016');
+Configure::write('Path.folder.stock.dataexport','files/datastock/');
+Configure::write('Path.folder.stock.datasrc','files/datasrc/');
+Configure::write("Linux.ftn.newline","\r\n");

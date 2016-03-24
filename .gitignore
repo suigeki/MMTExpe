@@ -8,6 +8,11 @@
 /build
 /dist
 /tags
+/app/webroot/files/datasrc/Gymnastique_Oculaire_Exo.mp3
+/app/webroot/files/datasrc/Memorisation_1_Exo.mp3
+/app/webroot/files/datasrc/POWERNAP_FR_SOPHIE_EXO.mp3
+/app/webroot/files/datasrc/Proprioception_Exo GAEL_MODIF.mp3
+/app/webroot/files/datastock/
 *.mo
 
 # IDE and editor specific files #

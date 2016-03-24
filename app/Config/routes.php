@@ -41,7 +41,9 @@ Router::connect('/ws/test/delete/:id', array('plugin'=>null,'controller'=>'tests
 
 //*****************************************************************
 //Expe
-Router::connect('/expe/empan/1', array('plugin' => null, 'controller' => 'empans', 'action' => 'phase1'));
+Router::connect('/expe/empan1', array('plugin' => null, 'controller' => 'empans', 'action' => 'index'));
+Router::connect('/expe/empan1/test1/:length', array('plugin' => null, 'controller' => 'empans', 'action' => 'test1'), array('pass'=>array('length')));
+Router::connect('/expe/empan1/write', array('plugin' => null, 'controller' => 'empans', 'action' => 'write_data'));
 
 /**
  * Load all plugin routes. See the CakePlugin documentation on
