@@ -1,11 +1,11 @@
 <?php
     App::uses('AppController', 'Controller');
 
-    class  EmpansController extends AppController{   
-        var $name='Empans';
+    class  MemoiresController extends AppController{   
+        var $name='Memoires';
 
         var $paginate = array(
-                                'Empans' => array(
+                                'Memoires' => array(
                                                                         )
                             );
 
@@ -19,14 +19,15 @@
         }
 
         public function index(){
+            //debug($this->Memoire->getData('1'));
             $this->set('position', 'phase1');
             $this->layout = 'Expe/main_layout';
             $this->viewPath = 'Expe';
-            $this->render('empan_index');
+            $this->render('memoire_index');
         }
 
-        public function test1($length = 3){
-            $value['stimulus'] = $this->MainFtn->rdm_majstring($length);
+        public function test1($numList = '1'){
+            $value = $this->Memoire->getData($numList);
             //$str= '[{\'stimulus\':\''.$this->MainFtn->rdm_majstring($length).'\'}];';
             $this->autoRender = false;
             $this->autoLayout = false;
@@ -37,7 +38,7 @@
         
         function write_data(){
             debug($this->request);
-            $return = $this->MainFtn->ftn_write_data('empan', $this->request->data[0], $this->request->data['phase'], $this->request->data['user']);
+            $return = $this->MainFtn->ftn_write_data('memoire', $this->request->data[0], $this->request->data['phase'], $this->request->data['user']);
             debug($return);
             $this->autoRender=false;
         }
