@@ -6,8 +6,39 @@
             <div id="loader"></div>
         </div>
         
+        <div id="zone_intro"><!-- screen1 -->
+            Nous vous remercions d'avoir accept&eacute; de participer &agrave; cette exp&eacute;rience. S'agissant de votre consentement, vous reconnaissez prendre part librement &agrave; cette exp&eacute;rience. Les informations que vous communiquerez resteront strictement confidentielles et anonymes.
+        </div>
+        <div id="zone_consignesT0_pre"><!-- screen2 -->
+            Une suite de mots va vous &ecirc;tre pr&eacute;sent&eacute;e &agrave; l'&eacute;cran. Il vous est demand&eacute; de les m&eacute;moriser car au terme de la pr&eacute;sentation de la liste, vous devrez les rappeler.
+        </div>
+        <!-- screen3 Liste -->
+        <div id="zone_consignesT0_post"><!-- screen4 -->
+Nous vous demandons de compter &eacute; rebours &eacute; voix haute en partant de 60 jusqu'&eacute; 0. Une fois le d&eacute;compte r&eacute;alis&eacute;, appuyez sur une touche de clavier pour passer &agrave; la suite.
+        </div>
+        <div id="zone_consignesT0_form"><!-- screen5 -->
+&Agrave; pr&eacute;sent, vous pouvez rappeler la liste de mots, en saisissant tous les mots dont vous vous souvenez &agrave; l'aide du clavier de l'ordinateur.
+        </div>
+        <!-- screen6 Audio -->
+        <!--div id="zone_consignesT1_pre">
+            Une suite de mots va vous être présentée à l’écran. Il vous est demandé de les mémoriser car au terme de la présentation de la liste, vous devrez les rappeler.
+        </div>
         
-        
+        <div id="zone_consignesT1_post">
+Nous vous demandons de compter à rebours à voix haute en partant de 60 jusqu’à 0. Une fois le décompte réalisé, appuyez sur une touche de clavier pour passer à la suite.
+        <div id="zone_consignesT1_form">
+À présent, vous pouvez rappeler la liste de mots, en saisissant tous les mots dont vous vous souvenez à l’aide du clavier de l’ordinateur.
+        </div-->
+        <div id="zone_merci"><!-- screen11 -->
+            Le test est maintenant termin&eacute; !<br />Nous vous remer&ccedil;ions.
+        </div>
+    </div>
+</div>
+    
+<br /><br /> 
+        <!--sardine bonnet puzzle muguet plombier abricot aluminium clarinette corbeau sapin tennis epinard ticket ongle canape
+        saumon echarpe carte tournesol medecin cerise acier saxophone canard chene football poireaux fiche barbe commode-->
+   
         <form id="formResponse" class="form-inline" role="form">
             <div class="row text-center">
                 <div class="col-md-12 text-center">
@@ -104,39 +135,9 @@
                 <div class="col-md-12 text-center">
                     <button id="btnFormResponse" type="submit" class="btn btn-default" >Valider</button>
                 </div>
-            </div>
-            
-        </form> 
-        
-        <div id="zone_intro"><!-- screen1 -->
-            Nous vous remercions d’avoir accepté de participer à cette expérience. S’agissant de votre consentement, vous reconnaissez prendre part librement à cette expérience. Les informations que vous communiquerez resteront strictement confidentielles et anonymes.
-        </div>
-        <div id="zone_consignesT0_pre"><!-- screen2 -->
-            Une suite de mots va vous être présentée à l’écran. Il vous est demandé de les mémoriser car au terme de la présentation de la liste, vous devrez les rappeler.
-        </div>
-        <!-- screen3 Liste -->
-        <div id="zone_consignesT0_post"><!-- screen4 -->
-Nous vous demandons de compter à rebours à voix haute en partant de 60 jusqu’à 0. Une fois le décompte réalisé, appuyez sur une touche de clavier pour passer à la suite.
-        </div>
-        <div id="zone_consignesT0_form"><!-- screen5 -->
-À présent, vous pouvez rappeler la liste de mots, en saisissant tous les mots dont vous vous souvenez à l’aide du clavier de l’ordinateur.
-        </div>
-        <!-- screen6 Audio -->
-        <div id="zone_consignesT1_pre"><!-- screen7 -->
-            Une suite de mots va vous être présentée à l’écran. Il vous est demandé de les mémoriser car au terme de la présentation de la liste, vous devrez les rappeler.
-        </div>
-        <!-- screen8 Liste -->
-        <div id="zone_consignesT1_post"><!-- screen9 -->
-Nous vous demandons de compter à rebours à voix haute en partant de 60 jusqu’à 0. Une fois le décompte réalisé, appuyez sur une touche de clavier pour passer à la suite.
-        <div id="zone_consignesT1_form"><!-- screen10 -->
-À présent, vous pouvez rappeler la liste de mots, en saisissant tous les mots dont vous vous souvenez à l’aide du clavier de l’ordinateur.
-        </div>
-        <div id="zone_merci"><!-- screen11 -->
-            Le test est maintenant terminé !<br />Nous vous remerçions.
-        </div>
-    </div>
-</div>
-
+            </div>            
+        </form>
+    
 
 
 <?php echo $this->Html->scriptStart( array( 'inline' => false)); ?>
@@ -166,9 +167,9 @@ Nous vous demandons de compter à rebours à voix haute en partant de 60 jusqu�
         $("#zone_consignesT0_pre").hide();
         $("#zone_consignesT0_post").hide();
         $("#zone_consignesT0_form").hide();
-        $("#zone_consignesT1_pre").hide();
+        /*$("#zone_consignesT1_pre").hide();
         $("#zone_consignesT1_post").hide();
-        $("#zone_consignesT1_form").hide();
+        $("#zone_consignesT1_form").hide();*/
         $("#zone_merci").hide();
         $("div[id^='mot_']").hide();
         $("input[id^='response_']").hide();
@@ -190,6 +191,7 @@ Nous vous demandons de compter à rebours à voix haute en partant de 60 jusqu�
                     case 3 : 
                         $("#zone_consignesT0_pre").hide();
                         //On lance la liste
+                        load_words('1');
                         break;
                     case 4 :
                         //La liste est effacée et la consignes T0_post est lancée après le delay
@@ -201,11 +203,11 @@ Nous vous demandons de compter à rebours à voix haute en partant de 60 jusqu�
                         break;
                     case 6 :
                         //On lance l'audio
-                        $("#zone_consignesT1_post").show();
+                        $("#zone_consignesT0_pre").show();
                         break;
                     case 7 :
-                        $("#zone_consignes").hide();
-                        load_words(numList);
+                        $("#zone_consignesT0_pre").hide();
+                        load_words('2');
                         break;
                     case 8 :
                         break;
@@ -217,15 +219,14 @@ Nous vous demandons de compter à rebours à voix haute en partant de 60 jusqu�
                         break;
                 }
             }
-        });
+        });    
         
         
-        
-        function load_words(list){
+        function load_words(listNum){
             var i = 0;
             $("#loader").html(imgloaderstr);
                 $.ajax({
-                    url: '<?php echo Configure::read('Website.url.application'); ?>/expe/memoire1/test1/'+list,
+                    url: '<?php echo Configure::read('Website.url.application'); ?>/expe/memoire1/test1/'+listNum,
                     data: '',
                     dataType: 'json',
                     success: function(data) {
@@ -234,50 +235,94 @@ Nous vous demandons de compter à rebours à voix haute en partant de 60 jusqu�
                         $.each(list, function(key, value) {
                             i+=1;
                             $("#mot_"+i).html(value);
-                            $("#mot_"+i).fadeIn(400).show();
+                            //$("#mot_"+i).fadeIn(400).show();
+                            //$("#mot_"+i).show();
+                            //$("#mot_"+i).delay(2000*i).fadeOut(400);
+                            //$("#mot_"+i).show();
                         });
-                        $("div[id^='mot_']").delay(2000).fadeOut(400);
+                        
+                        // set interval
+                        $("#mot_1").show();
+                        var tid = setInterval(manageItem, 1000);
+                        var iMot = 1;                        
+                        function manageItem() {
+                            iMot += 1;
+                            if(iMot <= 15){
+                                if(iMot != 1){
+                                    $("#mot_"+(iMot-1)).hide();
+                                }
+                                $("#mot_"+iMot).show();                                
+                            }else{
+                                abortTimer();
+                                $("#mot_15").hide();
+                                $("#zone_consignesT0_form").delay(0).show(0);
+                                $("input[id^='response_']").delay(0).show(0);
+                                $("#btnFormResponse").delay(0).show(0);
+                            }
+                        }
+                        function abortTimer() { // to be called when you want to stop the timer
+                            clearInterval(tid);
+                        }
+                        
+                        /*for (var ii = 1; ii <= 15; ii++) {
+                            $("#mot_"+ii).delay(2000*ii).fadeIn(0);
+                            $("#mot_"+ii).delay(2000*ii).fadeOut(0);
+                        }*/
+                        //for( var i=1; i <= 15; i++ ){
+                            //$("#mot_"+i).delay(2000*i).fadeOut(400);
+                            //$("#mot_"+i).show();
+                            //console.log($("#mot_"+i).html());
+                            //console.log(list.get(i-1));
+                        //}
+                        
+                        /*$("div[id^='mot_']").delay(2000).fadeOut(400);
+                        $("#zone_consignesT0_form").delay(2400).show(0);
                         $("input[id^='response_']").delay(2400).show(0);
-                        $("#btnFormResponse").delay(2400).show(0);
-                        config_submit(data);
+                        $("#btnFormResponse").delay(2400).show(0);*/
+                        //config_submit(data);
                     }
                 });
         }
         
         //$('#scriptaudio').on('ended', function() {
-        /*my_sound.on('ended', function() {
+        my_sound.on('ended', function() {
             $("#zone_preaudio").hide();
             phase = 'phase 2';
-            errors = 0;
-            nbrLetters = 4;
-            $("#zone_postaudio").show(0).delay(2000).fadeOut(400, function(){
-                load_divs(nbrLetters);
-            });            
-        });*/
+            $("#zone_consignesT0_pre").show();
+            screen = 6;       
+        });
         
-        function config_submit(listWords){
+                
+        $("#formResponse").submit(function(event) {
             var iL = 0;
             var result = '';
-            $("#formResponse").submit(function(event) {
-                $.each(listWords, function(key, value) {
-                    iL+=1;
-                    if(value == $("#response_"+iL).val()){
-                        result = '1';
-                    }else{
-                        result = '0';
-                    }
-                    strExport += user+';'+phase+';'+value+';'+$("#response_test").val()+';'+result+'/';
-                    console.log(value+' | '+$("#response_"+iL).val());
-                });
-                export_data();
-                if(phase == 'phase 1'){
-                    //Charge l'audio
+            $.each(list, function(key, value) {
+                iL+=1;
+                if(value == $("#response_"+iL).val()){
+                    result = '1';
                 }else{
-                    //Fin du processus
+                    result = '0';
                 }
-                return false;
+                strExport += user+';'+phase+';'+value+';'+$("#response_"+iL).val()+';'+result+'/';
+                console.log(value+' | '+$("#response_"+iL).val());
+                $("#response_"+iL).val('');
+                $("#response_"+iL).hide();
             });
-        }
+             $("#btnFormResponse").hide();
+            $("#zone_consignesT0_form").hide();
+            export_data();
+            if(phase == 'phase 1'){
+                //Charge l'audio
+                my_sound[0].play();
+                phase = 'phase 2';
+                $("#btnFormResponse").blur(); //On enlève le focus du bouton afin qu'il ne réagisse pas avec la bar de navigation
+            }else{
+                //Fin du processus
+                $("#zone_merci").show();
+            }
+            return false;
+        });
+        
         
         function export_data(){
             //strExport='sfsdfsd;trtrt;azeazeza/sdf;pouu;llllm';
@@ -285,47 +330,13 @@ Nous vous demandons de compter à rebours à voix haute en partant de 60 jusqu�
                 url: '<?php echo Configure::read('Website.url.application'); ?>/expe/memoire1/write',
                 type: 'post',
                 data: 'data='+strExport+'&phase='+phase+'&user='+user,
-                success: function(data) {
+                success: function(data) {                    
 		}
             });
+            strExport='';
         }
         
-        /*$("#formResponse").submit(function(event) {
-            for (i = 1; i <= 15; ++i) {
-                responseList[i] = $("#response_"+i).val();
-                console.log(responseList[i]);
-            }
-            
-            
-            //alert("Handler for .submit() called." );
-            //event.preventDefault();
-            $("#response_test").hide();
-            $("#btnFormResponse").hide();
-            strExport += user+';'+phase+';'+$("#response_test").val().toUpperCase()+';'+stimulus+';'+nbrLetters+';'+errors+'/';
-            if($("#response_test").val().toUpperCase() == stimulus){                
-                $("#response_test").val('');
-                errors = 0;
-                nbrLetters += 1;                
-                load_divs(nbrLetters);
-            }else{
-                $("#response_test").val('');
-                errors += 1;
-                if(errors == 2){
-                    export_data();
-                    if(phase == 'phase 1'){
-                        $("#zone_preaudio").show(0).delay(2000).fadeOut(400,function(){
-                            //$('#scriptaudio').get(0).play();
-                            my_sound[0].play();
-                        });                        
-                    }else{
-                        $("#zone_merci").show(0).delay(2000).fadeOut(400);
-                    }
-                }else{
-                    load_divs(nbrLetters);
-                }
-            }
-            return false;
-        });*/
+        
         
         
     });

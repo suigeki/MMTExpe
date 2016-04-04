@@ -21,11 +21,19 @@
         }
 
         function rdm_majstring($length = 3){
-            $characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+            $characters = 'BCDFGHJKLMNPQRSTVWXYZ';
             $rdmstr = '';
-            for ($i = 0; $i < $length; $i++) {
-                $rdmstr .= $characters[rand(0, strlen($characters) - 1)];
+            $consonne = '';
+            while (strlen($rdmstr) < $length) {
+                $consonne = $characters[rand(0, strlen($characters) - 1)];
+                //debug(strpos($rdmstr, $consonne));
+                if (strpos($rdmstr, $consonne) === false) {
+                    $rdmstr .= $consonne;
+                }
             }
+            //for ($i = 0; $i < $length; $i++) {
+            //    $rdmstr .= $characters[rand(0, strlen($characters) - 1)];
+            //}
             return $rdmstr;
             //PHP4>=
             //return substr(str_shuffle("ABCDEFGHIJKLMNOPQRSTUVWXYZ"), 0, $length);

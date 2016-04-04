@@ -41,14 +41,22 @@ Router::connect('/ws/test/delete/:id', array('plugin'=>null,'controller'=>'tests
 
 //*****************************************************************
 //Expe Empan
-Router::connect('/expe/empan1', array('plugin' => null, 'controller' => 'memoires', 'action' => 'index'));
-Router::connect('/expe/empan1/test1/:length', array('plugin' => null, 'controller' => 'memoires', 'action' => 'test1'), array('pass'=>array('length')));
-Router::connect('/expe/empan1/write', array('plugin' => null, 'controller' => 'memoires', 'action' => 'write_data'));
+Router::connect('/expe/empan1', array('plugin' => null, 'controller' => 'empans', 'action' => 'index'));
+Router::connect('/expe/empan1/test1/:length', array('plugin' => null, 'controller' => 'empans', 'action' => 'test1'), array('pass'=>array('length')));
+Router::connect('/expe/empan1/write', array('plugin' => null, 'controller' => 'empans', 'action' => 'write_data'));
 
 //Expe Memoire
 Router::connect('/expe/memoire1', array('plugin' => null, 'controller' => 'memoires', 'action' => 'index'));
 Router::connect('/expe/memoire1/test1/:numList', array('plugin' => null, 'controller' => 'memoires', 'action' => 'test1'), array('pass'=>array('numList')));
 Router::connect('/expe/memoire1/write', array('plugin' => null, 'controller' => 'memoires', 'action' => 'write_data'));
+
+//Expe Fatigue
+Router::connect('/expe/fatigue1', array('plugin' => null, 'controller' => 'fatigues', 'action' => 'index'));
+Router::connect('/expe/fatigue1/write', array('plugin' => null, 'controller' => 'fatigues', 'action' => 'write_data'));
+
+//Expe Sieste
+Router::connect('/expe/sieste1', array('plugin' => null, 'controller' => 'siestes', 'action' => 'index'));
+Router::connect('/expe/sieste1/write', array('plugin' => null, 'controller' => 'siestes', 'action' => 'write_data'));
 //*****************************************************************
 
 /**
